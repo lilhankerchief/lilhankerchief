@@ -1,0 +1,24 @@
+def calculate_portfolio_weights(asset_values):
+    """
+    Calculate the weights of assets in a portfolio.
+
+    Parameters:
+    - asset_values: List or array of asset values in the portfolio
+
+    Returns:
+    - portfolio_weights: List of weights corresponding to each asset
+    """
+    total_portfolio_value = sum(asset_values)
+
+    # Calculate weights for each asset
+    portfolio_weights = [value / total_portfolio_value for value in asset_values]
+
+    return portfolio_weights
+
+# Example usage:
+asset_values = [100000, 150000, 80000, 120000]  # Replace with your asset values
+
+portfolio_weights = calculate_portfolio_weights(asset_values)
+print("Portfolio Weights:")
+for i, weight in enumerate(portfolio_weights, 1):
+    print(f"Asset {i}: {weight:.2%}")
